@@ -1,53 +1,83 @@
+/* -------- Overall Page ---------- */
 body {
   text-align: center;
-  background-color: #011F3F;
+  background: white; /* dark navy, soft on eyes */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 50px;
+  color: #e0e0e0; /* soft grey text */
 }
 
+/* -------- Title ---------- */
 #level-title {
-  font-family: 'Press Start 2P', cursive;
-  font-size: 3rem;
-  margin:  5%;
-  color: #FEF2BF;
+  font-family: "Poppins", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: black; /* softer white */
+  text-shadow: none; /* remove bright glow */
 }
 
+/* -------- Game Container -------- */
 .container {
-  display: block;
-  width: 50%;
-  margin: auto;
-
+  width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
+/* -------- Each row -------- */
+.row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* -------- Buttons ---------- */
 .btn {
-  margin: 25px;
-  display: inline-block;
-  height: 200px;
-  width: 200px;
-  border: 10px solid black;
-  border-radius: 20%;
+  height: 180px;
+  width: 180px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-.game-over {
-  background-color: red;
-  opacity: 0.8;
+/* Softer modern colors */
+.green {
+  background: #2ecc71;
 }
 
 .red {
-  background-color: red;
-}
-
-.green {
-  background-color: green;
-}
-
-.blue {
-  background-color: blue;
+  background: #e74c3c;
 }
 
 .yellow {
-  background-color: yellow;
+  background: #f1c40f;
 }
 
+.blue {
+  background: #3498db;
+}
+
+/* Hover effect */
+.btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 8px 20px rgba(255,255,255,0.2);
+}
+
+/* Pressed animation */
 .pressed {
-  box-shadow: 0 0 20px white;
-  background-color: grey;
+  transform: scale(0.95);
+  filter: brightness(0.8);
+}
+
+/* Game Over Flash */
+.game-over {
+  background: red !important;
+  opacity: 0.8;
 }

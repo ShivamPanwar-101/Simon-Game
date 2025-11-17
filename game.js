@@ -77,3 +77,19 @@ function startOver() {
   gamePattern = [];
   started = false;
 }
+function typeText(elementId, text, speed = 80) {
+  let index = 0;
+
+  function type() {
+    if (index < text.length) {
+      document.getElementById(elementId).textContent += text.charAt(index);
+      index++;
+      setTimeout(type, speed);
+    }
+  }
+
+  type();
+}
+
+// Use it:
+typeText("level-title", "Press Any key to Start", 70);
